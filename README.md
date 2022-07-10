@@ -23,4 +23,5 @@ Then, we can run the following command to create the inner vlan proto 802.1q:
 ip link add link eth1.10 eth1.10.20 type vlan proto 802.1q id 20
 ```
 At this point, RouterOS can be interconnected.
-# Note: In OpenWRT, we can create outer proto 802.1ad only to interconnect with routeros 802.1q VLAN.
+# Note:
+In OpenWRT, we can create outer vlan proto 802.1ad only to interconnect with routeros 802.1q vlan.
