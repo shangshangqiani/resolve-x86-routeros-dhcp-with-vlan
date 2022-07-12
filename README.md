@@ -5,7 +5,7 @@ The problem has been existing from 2006 to the present day, and it needs to be r
 # The solution to the problem is described as follows:
 An 802.1ad VLAN can be created by interconnecting two RouterOS. That is```Use Service Tag```  
 In this way, the DHCP is successfully bound.  
-The interconnection between RouterOS and other operating systems must comply with the outer 802.1ad and inner 802.1q, such as OpenWRT.
+The interconnection between RouterOS and other router systems must comply with the outer layer vlan proto 802.1ad and inner layer vlan proto 802.1q, such as OpenWRT.
 # The following describes how to interconnect```RouterOS```and```OpenWRT```.
 For OpenWRT, we can create ethx.x (802.1q) and ethx.x.x (dual 802.1q) with interfaces.  
 However, this is not what we want to achieve.  
