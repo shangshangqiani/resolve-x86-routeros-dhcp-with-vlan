@@ -9,19 +9,19 @@ The interconnection between RouterOS and other operating systems must comply wit
 # The following describes how to interconnect```RouterOS```and```OpenWRT```.
 For OpenWRT, we can create ethx.x (802.1q) and ethx.x.x (dual 802.1q) with interfaces.  
 However, this is not what we want to achieve.  
-After visting the official website at Wiki, we learn that we can run the ip link command.  
+After visting the official website at Wiki, we learn that we can run the```ip link```command.  
 ```ip link```can be used to view all current interfaces.  
 ```ip link hlep```can be used to view the help documentation.  
 ```ip link delete ethx.x.x```can be used to delete an interface.  
 The VLAN```format```in OpenWRT is```ethx.Outer layer.inner layer```.  
-First, we can run the following command to create the outer vlan proto 802.1ad:  
+First, we can run the following command to create the outer layer vlan proto 802.1ad:  
 ```yaml
 ip link add link eth1 eth1.10 type vlan proto 802.1ad id 10
 ```
-Then, we can run the following command to create the inner vlan proto 802.1q:  
+Then, we can run the following command to create the inner layer vlan proto 802.1q:  
 ```yaml
 ip link add link eth1.10 eth1.10.20 type vlan proto 802.1q id 20
 ```
 At this point, RouterOS can be interconnected.
 # Note:
-In OpenWRT, we can create outer vlan proto 802.1ad only to interconnect with routeros 802.1q vlan.
+In OpenWRT, we can create outer layer vlan proto 802.1ad only to interconnect with routeros 802.1q vlan.
